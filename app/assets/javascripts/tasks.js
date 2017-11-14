@@ -31,7 +31,7 @@ $(function() {
       });
     }
     
-    $.get("https://todo-jyoon66.c9users.io/tasks").success( function( data ) {
+    $.get("/tasks").success( function( data ) {
       var htmlString = "";
       
       $.each(data, function(index,  task) {
@@ -58,6 +58,7 @@ $(function() {
         var ulTodos = $('.todo-list');
         ulTodos.append(htmlString);
         $('.toggle').click(toggleTask);
+        $('.new-todo').val('');
       });
     });
     
